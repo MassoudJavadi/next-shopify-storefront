@@ -16,6 +16,8 @@ interface Props {
 const DefaultLayout: React.FC<Props> = ({ query, children }) => {
   const itemCount = useQuery(CART_ITEM_COUNT_QUERY, () => CartService.getItemCount());
 
+  //console.log('DEF LAYOUT CHILDREN' + ' ' + children);
+
   React.useEffect(() => {
     if (query?.isFetching) {
       NProgress.start();
